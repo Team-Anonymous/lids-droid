@@ -1,28 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_launch"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context="com.scintillato.lisd.LaunchActivity">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="button"
-        android:id="@+id/btn_search"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll1"
+        android:background="@drawable/layout_outline"
+    android:orientation="vertical"
+android:layout_margin="4dp"
+    >
     <EditText
-
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="10dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="63dp"
         android:id="@+id/et_vehicle_id"
+        android:layout_margin="10dp"
+android:background="@drawable/layout_outline"
+        android:textColor="#000000"
         android:hint="Enter user id ..."
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  Get Trip info  "
+        android:layout_gravity="center"
+        android:background="@drawable/button_back"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/btn_search"
+        android:layout_below="@+id/et_vehicle_id"
+        android:layout_centerHorizontal="true" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_outline"
+        android:layout_marginTop="20dp"
+
+        android:layout_below="@id/ll1"
+        android:id="@+id/ll2"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_outline"
+            android:id="@+id/et_vehii_stop_id"
+            android:hint="Vehicle_no"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_outline"
+            android:id="@+id/et_license_no"
+            android:hint="license no"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:background="@drawable/button_back"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:id="@+id/btn_stop"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/layout_outline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll2"
+        android:id="@+id/ll3"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="match_parent"
+                android:hint="Enter Vehicle number"
+                android:layout_margin="10dp"
+                android:background="@drawable/layout_outline"
+                android:id="@+id/et_vehi_cf_no"
+                />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerInParent="true"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/custom_progressbar_drawable"
+                android:secondaryProgress="0" />
+
+
+            <TextView
+                android:id="@+id/txtProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/progressBar"
+                android:layout_centerInParent="true"
+                android:textColor="#000"
+                android:textSize="30dp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll4"
+        android:layout_below="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/layout_outline"
+            android:text="Current Carbon Footprint"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get Current Carbon Footprint consumed"
+            android:id="@+id/btn_cf"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_back"/>
+    </LinearLayout>
 
 </RelativeLayout>
+</ScrollView>
