@@ -1,17 +1,19 @@
 package com.scintillato.lisd;
 
+import java.util.Date;
+
 /**
  * Created by adikundiv on 01-04-2017.
  */
 
 public class Postion {
     private Double latitude,longitude;
-    private long time;
+    private Date time;
 
     public Postion(Double latitude, Double longitude, long time) {
         this.latitude = latitude;
         this.longitude = longitude;
-        this.time = time;
+        this.time = new Date(time);
     }
 
     public Double getLatitude() {
@@ -30,11 +32,11 @@ public class Postion {
         this.longitude = longitude;
     }
 
-    public long getTime() {
+    public Date getTime() {
         return time;
     }
 
     public void setTime(long time) {
-        this.time = time;
+        this.time = new Date(time);
     }
 }
